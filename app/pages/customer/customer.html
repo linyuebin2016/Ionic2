@@ -9,19 +9,28 @@
 </ion-navbar>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchQuery" (input)="getItems($event)" placeholder="客户名称或客户曾用名"></ion-searchbar>
+  <ion-searchbar 
+   [(ngModel)]="searchQuery" 
+   (input)="getItems($event)"
+    placeholder="客户名称或客户曾用名"
+    ></ion-searchbar>
   
   <!--下拉刷新-->
   <ion-refresher (refresh)="doRefresh($event)">
-    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="正在刷新数据..."></ion-refresher-content>
+    <ion-refresher-content 
+    pullingIcon="arrow-dropdown" 
+    pullingText="Pull to refresh" 
+    refreshingSpinner="circles" 
+    refreshingText="正在刷新数据...">
+    </ion-refresher-content>
   </ion-refresher>
   
   <!--客户列表-->
   <ion-list>
     <ion-list-header>客户列表</ion-list-header>
-    <button ion-item  *ngFor="#item of items" (click)="openNavDetailsPage(item)">
+    <ion-item   *ngFor="#item of items" (click)="openNavDetailsPage(item)">
       <h3><ion-icon name='person'></ion-icon> {{ item }}</h3>
-    </button>
+    </ion-item>
   </ion-list>
 
   <ion-infinite-scroll (infinite)="doInfinite($event)">
