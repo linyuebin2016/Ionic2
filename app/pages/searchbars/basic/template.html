@@ -1,0 +1,17 @@
+<ion-navbar *navbar hideBackButton>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    Searchbars
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" (input)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="#item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+</ion-content>

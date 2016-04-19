@@ -1,0 +1,14 @@
+
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    {{ item.title }}
+  </ion-title>
+</ion-navbar>
+
+<ion-content padding>
+  <ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}"></ion-icon>
+  {{ item.description }}
+</ion-content>
