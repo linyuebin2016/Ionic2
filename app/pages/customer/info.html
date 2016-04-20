@@ -7,16 +7,75 @@
 
 <ion-content padding>
 
-    <!--<ion-item>
-        <label>客户人员</label>
-        <ion-input type="text"></ion-input>
-    </ion-item>
 
-    <ion-item>
-        <ion-input type="text" placeholder="交流内容">
-    </ion-item>-->
+    <ion-slides pager>
 
-    <h1>{{name}}</h1>
-    <ion-input type="text" placeholder="交流内容"></ion-input>
+        <!--交流内容-->
+        <ion-slide>
+            <ion-list>
+                <ion-item>
+                    <ion-label> 客户人员</ion-label>
+                    <ion-input type="text" placeholder="习大大"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-textarea type="text" placeholder="交流内容"></ion-textarea>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+
+        <!--业务推进计划-->
+        <ion-slide>
+            <ion-list>
+                <ion-item>
+                    <ion-label>关联商机</ion-label>
+                    <ion-textarea type="text" placeholder="业务推进计划"></ion-textarea>
+                </ion-item>
+            </ion-list>
+        </ion-slide>
+
+        <!--商机-->
+        <ion-slide>
+
+            <ion-list>
+                <ion-item>
+                    <ion-label>关联商机</ion-label>
+                    <ion-input type="text" placeholder="商机名称"></ion-input>
+                    <ion-icon name="star"></ion-icon>
+                </ion-item>
+                <ion-item>
+                    <ion-label>我司人员</ion-label>
+                    <ion-input type="text" placeholder="Linyb"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>访问日期</ion-label>
+                    <ion-input type="date" placeholder="访问日期"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label> 访问地点</ion-label>
+                    <ion-input type="text" placeholder="珠海市香洲区远光软件园"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>项目阶段</ion-label>
+                    <ion-select [(ngModel)]="projectPhase" submitText="确定" cancelText="取消">
+                        <ion-option *ngFor="#o of options" value={{o.value}} checked="true">{{o.name}}</ion-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item>
+                    <ion-textarea type="text" placeholder="附件"></ion-textarea>
+                </ion-item>
+            </ion-list>
+
+            <!--<ion-tabs tabTitle="拜访信息" [root]="tabOne">
+            </ion-tabs>
+            <ion-tabs tabTitle="产品信息" [root]="tabTwo">
+            </ion-tabs>
+
+            <ion-tabs tabTitle="预测信息" [root]="tabThree">
+            </ion-tabs>-->
+        </ion-slide>
+
+    </ion-slides>
 
 </ion-content>

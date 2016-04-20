@@ -2,7 +2,7 @@
  * Created by linyuebin on 2016/4/15.
  */
 import {NavController, NavParams} from 'ionic-angular';
-import {Page} from 'ionic-angular';
+import {Page,Platform} from 'ionic-angular';
 
 
 //import {InfoPage}  from 'pages/customer/InfoPage';
@@ -13,9 +13,22 @@ import {Page} from 'ionic-angular';
 
 class NavigationDetailsPage {
   name: string;
+  options: Object;
+  projectPhase:Object=2;
   constructor(params: NavParams) {
     this.name = params.get('item');
+    this.options = [
+      { name: '立项', value: 1 },
+      { name: '技术交流', value: 2 },
+      { name: '方案确认', value: 3 },
+      { name: '招投标', value: 4 },
+      { name: '商务', value: 5 },
+      { name: '合同', value: 6 },
+      { name: '验收', value: 7 },
+      { name: '实施', value: 8 },
+    ];
   }
+
 }
 
 @Page({
@@ -78,7 +91,7 @@ export class CustomerPage {
   doInfinite(infiniteScroll) {
 
     setTimeout(() => {
-      for (var i = 0; i < 30; i++) {
+      for (var i = 0; i < 500; i++) {
         this.items.push('榆中县城农电公司' + i);
       }
 
@@ -120,8 +133,30 @@ export class CustomerPage {
 
   openNavDetailsPage(item) {
     this.nav.push(NavigationDetailsPage, { item: item });
+
   }
 
 }
 
+// @Page({
+//   template:
+//     '<ion-navbar *navbar hideBackButton>' +
+//       '<ion-title>Tabs</ion-title>' +
+//     '</ion-navbar>' +
+//     '<ion-content>' +
+//     '</ion-content>'
+// })
 
+// class TabTextPage {
+//   isAndroid: boolean = false;
+
+//   constructor(platform: Platform) {
+//     this.isAndroid = platform.is('android');
+//   }
+// }
+
+// export class BasicPage {
+//   tabOne = TabTextPage;
+//   tabTwo = TabTextPage;
+//   tabThree = TabTextPage;
+// }

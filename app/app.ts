@@ -143,4 +143,9 @@ class MyApp {
     let nav = this.app.getComponent('nav');
     nav.setRoot(customer.CustomerPage);
   }
+
+  goBusiness() {
+    let nav = this.app.getComponent('nav');
+    nav.setRoot(business.BusinessPage);
+  }
 }
