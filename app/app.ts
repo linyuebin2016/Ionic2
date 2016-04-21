@@ -1,7 +1,7 @@
 import 'es6-shim';
 import {App, IonicApp, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {GettingStartedPage} from './pages/getting-started/getting-started';
+import {GettingStartedPage,NavController} from './pages/getting-started/getting-started';
 
 import {ListPage} from './pages/list/list';
 import {HomePage} from './pages/home/home';
@@ -43,7 +43,12 @@ class MyApp {
   rootPage: any;
   pages: Array<{ title: string, component: any }>;
 
-  constructor(private app: IonicApp, private platform: Platform) {
+  constructor(
+    private app: IonicApp,
+    private platform: Platform
+    //private nav:NavController
+  ) {
+   // this.nav=nav;
     this.rootPage = GettingStartedPage;
     this.initializeApp();
 
@@ -148,4 +153,6 @@ class MyApp {
     let nav = this.app.getComponent('nav');
     nav.setRoot(business.BusinessPage);
   }
+  
+ 
 }

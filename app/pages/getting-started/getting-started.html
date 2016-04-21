@@ -5,7 +5,6 @@
     <ion-title>Getting Started</ion-title>
 </ion-navbar>
 
-
 <ion-content padding class="getting-started" ng-controller="actionsheetCtl">
 
     <div class="scroll-content padding" on-swipe-up="onSwipeUp()" on-swipe-down="onSwipeDown()" on-swipe-left="onSwipeLeft()"
@@ -14,28 +13,44 @@
         <p> Get it started!</p>
         <p>Start with the top left menu.</p>
 
-        <button><ion-icon name="star"></ion-icon>ActionSheet</button>
-        <button><ion-icon name="star"></ion-icon>on-hold</button>
-        <button><ion-icon name="star"></ion-icon>list</button>
+        <button (click)="openMenu()"><ion-icon name="star"></ion-icon>1.ActionSheet</button>
+        <button (click)="presentAlert()"><ion-icon name="star"></ion-icon>2.Alerts</button>
+        <button><ion-icon name="star"></ion-icon>3.Badges</button>
+        <ion-badge item-right>我是Badges</ion-badge>
+        <button><ion-icon name="star"></ion-icon>4.Buttons</button>
+        <button><ion-icon name="star"></ion-icon>5.Cards</button>
+        <button><ion-icon name="star"></ion-icon>6.Checkboxes</button>
+        <button><ion-icon name="star"></ion-icon>7.Content</button>
+        <button><ion-icon name="star"></ion-icon>8.Grid</button>
+        <button><ion-icon name="star"></ion-icon>9.Hidewhen</button>
+        <button><ion-icon name="star"></ion-icon>10.Icons</button>
+        <button><ion-icon name="star"></ion-icon>11.InfiniteScroll</button>
+
+        <ion-item>
+            <ion-label>Jon Snow</ion-label>
+            <ion-checkbox checked="true" onchange="openMenu()"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Daenerys Targaryen</ion-label>
+            <ion-checkbox dark checked="true"></ion-checkbox>
+        </ion-item>
 
         <ion-list>
-
             <ion-list-header>手势
             </ion-list-header>
-
-            <ion-item>
+               <ion-item>
                 <ion-avatar item-left>
                     <img src="img/avatar-finn.png">
                 </ion-avatar>
                 <h2>on hold </h2>
-                <button danger class="button" on-hold=onHold()> on-hold</button>
+                <button danger large class="button" on-swipe="onHold()"> on-hold</button>
+                <button danger large class="button" on-swipe-up="onSwipeUp()"> on-swipe-up</button>
+                <button danger large class="button" on-swipe-down="onSwipeDown()">on-swipe-down</button>
+                <button danger large class="button" on-swipe-left="onSwipeLeft()">on-swipe-left</button>
+                <button danger large class="button" on-swipe-right="onSwipeRight()">on-swipe-right</button>
                 <p>长按的时间是500毫秒。</p>
-
-
                 <p class="padding">按住鼠标快速划！</p>
-                <i class="icon {{icon}}"></i>
-
-
             </ion-item>
 
             <ion-item>
