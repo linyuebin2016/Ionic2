@@ -24,7 +24,7 @@
     refreshingText="正在刷新数据...">
     </ion-refresher-content>
   </ion-refresher>
-  
+
   <!--客户列表-->
   <ion-list>
     <ion-list-header>客户列表</ion-list-header>
@@ -33,6 +33,7 @@
     </ion-item>
   </ion-list>
 
+<!--滚动条底部加载数据-->
   <ion-infinite-scroll (infinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

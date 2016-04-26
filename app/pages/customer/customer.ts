@@ -100,7 +100,7 @@ export class CustomerPage {
     }, 1000);
   }
 
-  //下拉刷新
+  //滚动条下拉刷新
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
@@ -128,6 +128,7 @@ export class CustomerPage {
         '数据更新了Washington'
       ];
       refresher.complete();
+      
     }, 2000);
   }
 

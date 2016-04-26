@@ -1,11 +1,13 @@
 import 'es6-shim';
-import {App, IonicApp, Platform} from 'ionic-angular';
+import {App, IonicApp, Platform,NavController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {GettingStartedPage,NavController} from './pages/getting-started/getting-started';
+import {GettingStartedPage} from './pages/getting-started/getting-started';
 
 import {ListPage} from './pages/list/list';
 import {HomePage} from './pages/home/home';
 import {BasicPage} from './pages/modals/basic/pages';
+
+
 
 //所有控件
 import * as actionSheets from './pages/action-sheets/action-sheets';
@@ -34,6 +36,9 @@ import * as toolbar from './pages/toolbar/toolbar';
 import * as customer from './pages/customer/customer'
 import * as business from './pages/business/business'
 
+
+import * as contacts from './pages/Contacts/contacts';
+
 @App({
   templateUrl: 'build/app.html',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
@@ -60,7 +65,10 @@ class MyApp {
       { title: 'List', component: ListPage },
       { title: 'home', component: HomePage },
       { title: 'Modal', component: BasicPage },
+      
+      {title:'联系人',component:contacts.addressList},
       //所有控件菜单
+      /*
       { title: '/action-sheets/basic', component: actionSheets.BasicPage },
       { title: '/alerts/basic', component: alerts.BasicPage },
       { title: '/alerts/checkbox', component: alerts.CheckboxPage },
@@ -68,9 +76,9 @@ class MyApp {
       { title: '/alerts/prompt', component: alerts.PromptPage },
       { title: '/alerts/radio', component: alerts.RadioPage },
       { title: '/badges/basic', component: badges.BasicPage },
-      { title: '/buttons/basic', component: buttons.BasicPage },
+      { title: '/buttons/basic', component: buttons.BasicPage },      */
       { title: '/badges/basic', component: badges.BasicPage },
-      { title: '/buttons/block', component: buttons.BlockPage },
+      /* { title: '/buttons/block', component: buttons.BlockPage },
       { title: '/buttons/clear', component: buttons.ClearPage },
       { title: '/buttons/components', component: buttons.ComponentsPage },
       { title: '/buttons/fab', component: buttons.FabPage },
@@ -88,9 +96,9 @@ class MyApp {
       { title: '/cards/image', component: cards.ImagePage },
       { title: '/cards/list', component: cards.ListPage },
       { title: '/checkboxes/basic', component: checkboxes.BasicPage },
-      { title: '/grid/basic', component: grid.BasicPage },
+      { title: '/grid/basic', component: grid.BasicPage },  */
       { title: '/icons/basic', component: icons.BasicPage },
-      { title: '/inputs/basic', component: inputs.BasicPage },
+       /*{ title: '/inputs/basic', component: inputs.BasicPage },
       { title: '/inputs/fixed-inline', component: inputs.FixedInlinePage },
       { title: '/inputs/floating', component: inputs.FloatingPage },
       { title: '/inputs/inline', component: inputs.InlinePage },
@@ -123,8 +131,9 @@ class MyApp {
       { title: '/toggles/basic', component: toggles.BasicPage },
       { title: '/toolbar/basic', component: toolbar.BasicPage },
       { title: '/toolbar/buttons', component: toolbar.ButtonsPage },
-      { title: '/toolbar/searchbar', component: toolbar.SearchbarPage },
+      { title: '/toolbar/searchbar', component: toolbar.SearchbarPage },    */
       { title: '/toolbar/segment', component: toolbar.SegmentPage }
+  
     ];
   }
 

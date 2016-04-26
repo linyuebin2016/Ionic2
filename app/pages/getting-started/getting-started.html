@@ -2,7 +2,11 @@
     <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
+
+
     <ion-title>Getting Started</ion-title>
+    <button end>
+         <ion-icon name="star"></ion-icon></button>
 </ion-navbar>
 
 <ion-content padding class="getting-started" ng-controller="actionsheetCtl">
@@ -15,16 +19,35 @@
 
         <button (click)="openMenu()"><ion-icon name="star"></ion-icon>1.ActionSheet</button>
         <button (click)="presentAlert()"><ion-icon name="star"></ion-icon>2.Alerts</button>
-        <button><ion-icon name="star"></ion-icon>3.Badges</button>
-        <ion-badge item-right>我是Badges</ion-badge>
-        <button><ion-icon name="star"></ion-icon>4.Buttons</button>
-        <button><ion-icon name="star"></ion-icon>5.Cards</button>
-        <button><ion-icon name="star"></ion-icon>6.Checkboxes</button>
-        <button><ion-icon name="star"></ion-icon>7.Content</button>
-        <button><ion-icon name="star"></ion-icon>8.Grid</button>
-        <button><ion-icon name="star"></ion-icon>9.Hidewhen</button>
-        <button><ion-icon name="star"></ion-icon>10.Icons</button>
-        <button><ion-icon name="star"></ion-icon>11.InfiniteScroll</button>
+        <button class="badges"> 3.Badges</button>
+        <ion-badge Dark>10</ion-badge>
+
+        <ion-list>
+
+            <ion-item>
+                <button outline end><ion-icon name="home" role="1"></ion-icon>4.Buttons outline</button>
+                <button clear><ion-icon name="star" role="1"></ion-icon> clear</button>
+                <button round><ion-icon name="star" role="1"></ion-icon>round</button>
+                <button block><ion-icon name="star" role="1"></ion-icon>block</button>
+                <button full><ion-icon name="star" role="1"></ion-icon>full</button>
+                <button small><ion-icon name="star" role="1"></ion-icon>small</button>
+                <button large><ion-icon name="star" role="1"></ion-icon>large</button>
+                <button disabled><ion-icon name="star" role="1"></ion-icon>disabled</button>
+
+            </ion-item>
+
+            <ion-item>
+                <button fab fab-center>fab</button>
+            </ion-item>
+        </ion-list>
+
+        <button><ion-icon name="star" role="1"></ion-icon>5.Cards</button>
+        <button><ion-icon name="star" role="1"></ion-icon>6.Checkboxes</button>
+        <button><ion-icon name="star" role="1"></ion-icon>7.Content</button>
+        <button><ion-icon name="star" role="2"></ion-icon>8.Grid</button>
+        <button><ion-icon name="star" role="2"></ion-icon>9.Hidewhen</button>
+        <button><ion-icon name="star" role="2"></ion-icon>10.Icons</button>
+        <button><ion-icon name="star" role="2"></ion-icon>11.InfiniteScroll</button>
 
         <ion-item>
             <ion-label>Jon Snow</ion-label>
@@ -39,7 +62,7 @@
         <ion-list>
             <ion-list-header>手势
             </ion-list-header>
-               <ion-item>
+            <ion-item>
                 <ion-avatar item-left>
                     <img src="img/avatar-finn.png">
                 </ion-avatar>
@@ -72,5 +95,40 @@
             </ion-item>
 
         </ion-list>
+
+        <div hideWhen="android">
+            I am hidden on Android!
+        </div>
+
+        <div hideWhen="ios">
+            I am hidden on iOS!
+        </div>
+
+        <div hideWhen="android,ios">
+            I am hidden on Android and iOS!
+        </div>
+
+        <div hideWhen="portrait">
+            I am hidden on Portrait!
+        </div>
+
+        <div hideWhen="landscape">
+            I am hidden on Landscape!
+        </div>
     </div>
+
+    <h1>Contact </h1>
+    <!--{{p2|json}}-->
+    <button (click)="findContact()">begin</button>
+    <ion-list>
+        <ion-item *ngFor="#p of p2">
+            <table>
+                <tr>
+                    <td><button> {{p.displayName}}</button></td>
+                    <td><button>{{ p.phone}}</button></td>
+                </tr>
+            </table>
+        </ion-item>
+    </ion-list>
+
 </ion-content>
